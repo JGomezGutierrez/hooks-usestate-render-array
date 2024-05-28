@@ -1,21 +1,21 @@
 
 import React from 'react'
 
-export const Person = (props) => {
+export const Person = ({id, name, role, img, handleEdit}) => {
   return (
-    <div>
-        <div className='row'>
-            <div>
-                <img src={props.img} alt={props.name} />
-            </div>
-            <div>
-                <h3>{props.name}</h3>
-            </div>
-            <div>
-                <h3>{props.role}</h3>
-            </div>
-      </div>
+    <div className="col">
+    <div className="card" style={{width: "18rem"}}>
+      <img src={img} className="card-img-top" alt={name}/>
+        <div className="card-body">
+          <h5 className="card-title">{name}</h5>
+          <p className="card-text">{role}</p>
+        </div>
+         <div className='mb-4'> {/*mb: margin button  */}
+          <button className="btn btn-success me-2" onClick={handleEdit} >Editar</button>
+          <button className="btn btn-danger" >Eliminar</button>
+        </div>
     </div>
+  </div>
     
   )
 }
